@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Misicalia</h1>
+    {% if cancion_qs %}
+    <table>
+        <tr>
+            <td>Nombre del autor</td>
+            <td>letra</td>
+        </tr>
+        {% for cancion in cancion_qs %}
+        <tr>
+            <td>{{cancion.nombreartista}}</td>
+            <td>{{cancion.letra}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <strong> Canción no encontrada. </strong>
+    {% endif %}
+</body>
+</html>
